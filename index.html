@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Barklight</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 🔹 NAVIGASJON -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <div class="logo">Project Barklight</div>
+      <nav class="nav-links" id="navMenu">
+        <a href="#" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#comics">Comics</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- 🔹 HERO-SEKSJON -->
+  <section class="hero">
+    <h1>Welcome to Project Barklight!</h1>
+    <p>Where color barks louder than words 🐶✨</p>
+    <button class="cta-btn">Read the Latest Comic</button>
+  </section>
+
+  <!-- 🔹 COMIC PREVIEW -->
+  <section id="comics" class="comic-section">
+    <h2>Meet the Crew</h2>
+    <div class="comic-grid">
+      <div class="comic-card">
+        <img src="bilder/berit1.jpg" alt="Berit the eco dog in action" title="Berit saving the world one bark at a time">
+        <h3>Berit the Brave</h3>
+        <p>Defender of recycling bins and sworn enemy of plastic straws.</p>
+      </div>
+      <div class="comic-card">
+        <img src="bilder/berit2.jpg" alt="Berit’s arch-nemesis Captain Waste" title="Captain Waste plotting chaos">
+        <h3>Captain Waste</h3>
+        <p>The villain who never learned to sort trash properly.</p>
+      </div>
+      <div class="comic-card">
+        <img src="bilder/berit3.jpg" alt="EcoDog Squad group shot" title="The EcoDog Squad united">
+        <h3>EcoDog Squad</h3>
+        <p>Together, they clean up the streets — one paw at a time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 FOOTER -->
+  <footer>
+    <p>© 2025 Project Barklight • Woofs of creativity and chaos 🐾</p>
+  </footer>
+
+  <!-- 🔹 SCRIPT: MENY -->
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
