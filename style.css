@@ -7,193 +7,97 @@
 }
 
 /* -------------------------
-   GLOBAL STIL
+   GRUNNOPPSETT
 -------------------------- */
 body {
   margin: 0;
-  font-family: 'Comic Neue', sans-serif;
+  padding: 0;
+  height: 400vh; /* gir plass til scroll */
   background: var(--yellow);
-  color: var(--dark);
+  font-family: 'Comic Neue', sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* -------------------------
-   NAVIGASJON
+   MENY (bare knapper)
 -------------------------- */
 .nav-header {
-  background: var(--purple);
-  color: var(--white);
   position: sticky;
   top: 0;
-  z-index: 10;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-}
-
-.nav-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
+  background: var(--yellow);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-family: 'Luckiest Guy', cursive;
-  font-size: 1.8rem;
-  color: var(--white);
+  justify-content: center;
+  z-index: 10;
+  padding: 1rem 0;
 }
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .nav-links a {
-  color: var(--white);
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.2rem;
+  color: var(--purple);
+  text-transform: uppercase;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .nav-links a:hover {
   color: var(--pink);
-}
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: var(--white);
-  cursor: pointer;
+  transform: scale(1.1);
 }
 
 /* -------------------------
-   HERO
+   SIRKLER SOM FLYTER
 -------------------------- */
-.hero {
-  text-align: center;
-  background: var(--pink);
-  color: var(--white);
-  padding: 6rem 2rem;
-  border-bottom: 8px solid var(--purple);
-}
-
-.hero h1 {
-  font-family: 'Luckiest Guy', cursive;
-  font-size: 3rem;
-  margin: 0 0 1rem;
-}
-
-.hero p {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-}
-
-.cta-btn {
-  background: var(--purple);
-  color: var(--white);
-  border: none;
-  padding: 1rem 2rem;
-  font-family: 'Luckiest Guy', cursive;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: 0.3s ease;
-}
-
-.cta-btn:hover {
-  background: var(--white);
-  color: var(--purple);
-}
-
-/* -------------------------
-   COMIC GRID
--------------------------- */
-.comic-section {
-  background: var(--white);
-  padding: 5rem 2rem;
-  text-align: center;
-}
-
-.comic-section h2 {
-  font-family: 'Luckiest Guy', cursive;
-  font-size: 2.5rem;
-  color: var(--purple);
-  margin-bottom: 3rem;
-}
-
-.comic-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.comic-card {
-  background: var(--pink);
-  color: var(--white);
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.comic-card:hover {
-  transform: translateY(-8px);
-}
-
-.comic-card img {
+.bubble-area {
+  position: relative;
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: 400vh;
+  overflow: hidden;
 }
 
-.comic-card h3 {
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--pink);
+  color: var(--white);
+  text-align: center;
   font-family: 'Luckiest Guy', cursive;
-  font-size: 1.5rem;
-  margin: 1rem 0 0.5rem;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  padding: 3rem;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.4s ease;
 }
 
-.comic-card p {
-  padding: 0 1.5rem 2rem;
-  font-size: 1rem;
-}
+/* forskjellige plasseringer */
+#circle1 { top: 10vh; left: 10%; background: var(--pink); }
+#circle2 { top: 30vh; left: 60%; background: var(--purple); }
+#circle3 { top: 60vh; left: 25%; background: var(--pink); }
+#circle4 { top: 100vh; left: 70%; background: var(--purple); }
+#circle5 { top: 140vh; left: 40%; background: var(--pink); }
+#circle6 { top: 200vh; left: 20%; background: var(--purple); }
 
 /* -------------------------
    FOOTER
 -------------------------- */
 footer {
+  position: relative;
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 1rem;
   background: var(--purple);
   color: var(--white);
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-}
-
-/* -------------------------
-   RESPONSIVITET
--------------------------- */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: var(--purple);
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    padding: 1rem 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
+  font-family: 'Comic Neue', sans-serif;
+  letter-spacing: 0.5px;
 }
