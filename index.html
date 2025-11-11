@@ -1,52 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Barklight</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet" />
 </head>
 
 <body>
 
-  <!-- 🔸 TOPPMENY (kun knapper) -->
+  <!-- 🔸 TOPPMENY -->
   <header class="nav-header">
-    <nav class="nav-links" id="navMenu">
-      <a href="#circle1">Home</a>
-      <a href="#circle2">About</a>
-      <a href="#circle3">Comics</a>
-      <a href="#circle4">Characters</a>
-      <a href="#circle5">Fun Facts</a>
-      <a href="#circle6">Contact</a>
+    <nav class="nav-links">
+      <a href="#one">Home</a>
+      <a href="#two">About</a>
+      <a href="#three">Comics</a>
+      <a href="#four">Contact</a>
     </nav>
   </header>
 
-  <!-- 🔹 SIRKLER SOM FLYTER OPPÅ -->
-  <section class="bubble-area">
-    <div class="bubble" id="circle1">Bark</div>
-    <div class="bubble" id="circle2">Light</div>
-    <div class="bubble" id="circle3">Berit</div>
-    <div class="bubble" id="circle4">Captain Waste</div>
-    <div class="bubble" id="circle5">Eco Squad</div>
-    <div class="bubble" id="circle6">Contact</div>
+  <!-- 🔹 SIRKLER -->
+  <section class="scroll-area">
+    <div class="bubble" id="one">Bark</div>
+    <div class="bubble" id="two">Light</div>
+    <div class="bubble" id="three">Berit</div>
+    <div class="bubble" id="four">Woof!</div>
+    <div class="bubble" id="five">Play</div>
+    <div class="bubble" id="six">Fun</div>
   </section>
 
-  <!-- 🔹 FOOTER -->
-  <footer>© 2025 Project Barklight – The world’s most colorful mess 🐾</footer>
-
-  <!-- 🔹 SCROLL ANIMASJON -->
-  <script>
-    const bubbles = document.querySelectorAll('.bubble');
-    window.addEventListener('scroll', () => {
-      const scrollPos = window.scrollY;
-      bubbles.forEach((bubble, index) => {
-        const speed = (index + 1) * 0.4;
-        bubble.style.transform = `translateY(${scrollPos * speed}px)`;
-      });
-    });
-  </script>
+  <footer>© 2025 Project Barklight 🐾</footer>
 
 </body>
 </html>
-
