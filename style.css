@@ -1,0 +1,199 @@
+:root {
+  --yellow: #FFD447;
+  --pink: #FF66B3;
+  --purple: #8C52FF;
+  --white: #FFFFFF;
+  --dark: #222;
+}
+
+/* -------------------------
+   GLOBAL STIL
+-------------------------- */
+body {
+  margin: 0;
+  font-family: 'Comic Neue', sans-serif;
+  background: var(--yellow);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+/* -------------------------
+   NAVIGASJON
+-------------------------- */
+.nav-header {
+  background: var(--purple);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.8rem;
+  color: var(--white);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--pink);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* -------------------------
+   HERO
+-------------------------- */
+.hero {
+  text-align: center;
+  background: var(--pink);
+  color: var(--white);
+  padding: 6rem 2rem;
+  border-bottom: 8px solid var(--purple);
+}
+
+.hero h1 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 3rem;
+  margin: 0 0 1rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  background: var(--purple);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2rem;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: var(--white);
+  color: var(--purple);
+}
+
+/* -------------------------
+   COMIC GRID
+-------------------------- */
+.comic-section {
+  background: var(--white);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.comic-section h2 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 2.5rem;
+  color: var(--purple);
+  margin-bottom: 3rem;
+}
+
+.comic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.comic-card {
+  background: var(--pink);
+  color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.comic-card:hover {
+  transform: translateY(-8px);
+}
+
+.comic-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.comic-card h3 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.comic-card p {
+  padding: 0 1.5rem 2rem;
+  font-size: 1rem;
+}
+
+/* -------------------------
+   FOOTER
+-------------------------- */
+footer {
+  background: var(--purple);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+
+/* -------------------------
+   RESPONSIVITET
+-------------------------- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--purple);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
