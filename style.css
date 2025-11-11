@@ -3,6 +3,9 @@
   --pink: #ff66b3;
   --purple: #8c52ff;
   --blue: #4ecbff;
+  --teal: #5afad6;
+  --orange: #ff914d;
+  --green: #00c98d;
   --white: #ffffff;
 }
 
@@ -13,7 +16,7 @@ body {
   margin: 0;
   background: var(--yellow);
   font-family: 'Luckiest Guy', cursive;
-  height: 400vh; /* gir plass til scroll */
+  height: 400vh; /* plass til scroll */
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -58,33 +61,33 @@ body {
   height: 350vh;
 }
 
-/* Basis-stil for sirklene */
+/* Basis-stil for boblene */
 .bubble {
   position: absolute;
   border-radius: 50%;
   color: var(--white);
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 300px;
+  width: 380px;
+  height: 380px;
   opacity: 0;
   transform: translateY(120px) scale(0.6);
   animation: fadeFloat 1.8s ease-out forwards, colorShift 8s infinite linear;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
   line-height: 1.2;
   text-transform: uppercase;
 }
 
-/* Plassering på siden */
-#one { top: 40vh; left: 10%; animation-delay: 0.3s; }
-#two { top: 90vh; left: 65%; animation-delay: 0.6s; }
-#three { top: 140vh; left: 25%; animation-delay: 0.9s; }
-#four { top: 190vh; left: 70%; animation-delay: 1.2s; }
-#five { top: 240vh; left: 45%; animation-delay: 1.5s; }
-#six { top: 300vh; left: 20%; animation-delay: 1.8s; }
+/* Ulike plasseringer og startfarger */
+#one   { top: 40vh;  left: 8%;  background: var(--pink);   animation-delay: 0.2s; }
+#two   { top: 90vh;  left: 60%; background: var(--purple); animation-delay: 0.4s; }
+#three { top: 140vh; left: 25%; background: var(--blue);   animation-delay: 0.6s; }
+#four  { top: 190vh; left: 70%; background: var(--teal);   animation-delay: 0.8s; }
+#five  { top: 240vh; left: 45%; background: var(--orange); animation-delay: 1.0s; }
+#six   { top: 300vh; left: 18%; background: var(--green);  animation-delay: 1.2s; }
 
 /* ----------------------------
    ANIMASJONER
@@ -94,7 +97,7 @@ body {
 @keyframes fadeFloat {
   0% {
     opacity: 0;
-    transform: translateY(120px) scale(0.6);
+    transform: translateY(150px) scale(0.6);
   }
   100% {
     opacity: 1;
@@ -104,10 +107,10 @@ body {
 
 /* fargeloop mellom rosa → lilla → blå → rosa */
 @keyframes colorShift {
-  0%   { background: var(--pink); }
-  33%  { background: var(--purple); }
-  66%  { background: var(--blue); }
-  100% { background: var(--pink); }
+  0%   { filter: hue-rotate(0deg); }
+  33%  { filter: hue-rotate(60deg); }
+  66%  { filter: hue-rotate(120deg); }
+  100% { filter: hue-rotate(0deg); }
 }
 
 /* ----------------------------
@@ -119,4 +122,3 @@ footer {
   color: var(--pink);
   font-size: 1.1rem;
 }
-
