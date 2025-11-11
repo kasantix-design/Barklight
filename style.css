@@ -1,35 +1,32 @@
 :root {
-  --yellow: #FFD447;
-  --pink: #FF66B3;
-  --purple: #8C52FF;
-  --white: #FFFFFF;
-  --dark: #222;
+  --yellow: #ffd447;
+  --pink: #ff66b3;
+  --white: #ffffff;
 }
 
-/* -------------------------
-   GRUNNOPPSETT
--------------------------- */
+/* ----------------------------
+   GRUNNLEGGENDE SIDE
+----------------------------- */
 body {
   margin: 0;
-  padding: 0;
-  height: 400vh; /* gir plass til scroll */
   background: var(--yellow);
-  font-family: 'Comic Neue', sans-serif;
+  font-family: 'Luckiest Guy', cursive;
+  height: 400vh; /* gir plass til scroll */
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-/* -------------------------
-   MENY (bare knapper)
--------------------------- */
+/* ----------------------------
+   TOPPMENY
+----------------------------- */
 .nav-header {
   position: sticky;
   top: 0;
-  background: var(--yellow);
   display: flex;
   justify-content: center;
   z-index: 10;
   padding: 1rem 0;
+  background: transparent; /* ingen stripe under */
 }
 
 .nav-links {
@@ -38,66 +35,73 @@ body {
 }
 
 .nav-links a {
+  color: var(--pink);
   text-decoration: none;
-  font-family: 'Luckiest Guy', cursive;
-  font-size: 1.2rem;
-  color: var(--purple);
-  text-transform: uppercase;
-  transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: var(--pink);
   transform: scale(1.1);
+  color: var(--white);
 }
 
-/* -------------------------
-   SIRKLER SOM FLYTER
--------------------------- */
-.bubble-area {
+/* ----------------------------
+   SIRKLER SOM FLYTER INN
+----------------------------- */
+.scroll-area {
   position: relative;
   width: 100%;
-  height: 400vh;
-  overflow: hidden;
+  height: 350vh;
 }
 
+/* Basis-stil for sirklene */
 .bubble {
   position: absolute;
-  border-radius: 50%;
   background: var(--pink);
   color: var(--white);
-  text-align: center;
-  font-family: 'Luckiest Guy', cursive;
-  font-size: 1.4rem;
-  line-height: 1.2;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  padding: 3rem;
+  border-radius: 50%;
   width: 180px;
   height: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.4s ease;
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateY(100px) scale(0.8);
+  animation: floatUp 1s ease-out forwards;
 }
 
-/* forskjellige plasseringer */
-#circle1 { top: 10vh; left: 10%; background: var(--pink); }
-#circle2 { top: 30vh; left: 60%; background: var(--purple); }
-#circle3 { top: 60vh; left: 25%; background: var(--pink); }
-#circle4 { top: 100vh; left: 70%; background: var(--purple); }
-#circle5 { top: 140vh; left: 40%; background: var(--pink); }
-#circle6 { top: 200vh; left: 20%; background: var(--purple); }
+/* Hver sirkel får litt forskjellig timing og plassering */
+#one { top: 50vh; left: 10%; animation-delay: 0.3s; }
+#two { top: 100vh; left: 60%; animation-delay: 0.6s; }
+#three { top: 150vh; left: 30%; animation-delay: 0.9s; }
+#four { top: 200vh; left: 70%; animation-delay: 1.2s; }
+#five { top: 250vh; left: 40%; animation-delay: 1.5s; }
+#six { top: 300vh; left: 15%; animation-delay: 1.8s; }
 
-/* -------------------------
+/* ----------------------------
+   ANIMASJONER
+----------------------------- */
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ----------------------------
    FOOTER
--------------------------- */
+----------------------------- */
 footer {
-  position: relative;
   text-align: center;
-  padding: 3rem 1rem;
-  font-size: 1rem;
-  background: var(--purple);
-  color: var(--white);
-  font-family: 'Comic Neue', sans-serif;
-  letter-spacing: 0.5px;
+  padding: 3rem 0;
+  color: var(--pink);
+  font-size: 1.1rem;
 }
+
